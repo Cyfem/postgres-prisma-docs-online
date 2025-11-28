@@ -1,11 +1,11 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import AntdProvider from '@/components/AntdProvider'
 
 export const metadata = {
   metadataBase: new URL('https://postgres-prisma.vercel.app'),
-  title: 'Vercel Postgres Demo with Prisma',
-  description:
-    'A simple Next.js app with Vercel Postgres as the database and Prisma as the ORM',
+  title: '在线文档编辑器',
+  description: '一个功能强大的在线文档协作平台',
 }
 
 const inter = Inter({
@@ -20,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>{children}</body>
+    <html lang="zh-CN">
+      <body className={inter.variable}>
+        <AntdProvider>{children}</AntdProvider>
+      </body>
     </html>
   )
 }
